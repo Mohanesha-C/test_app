@@ -2,10 +2,10 @@
 FROM tomcat:9.0-jdk11-corretto
 
 # Purge pre-packaged root layouts from Tomcat image webapps space
-RUN rm -rf /usr/local/tomcat/webapps/struts-k8s-demo
+RUN rm -rf /usr/local/tomcat/webapps/test_app
 
 # Copy Compiled .WAR file from local target folder into running container folder
-COPY target/struts-k8s-demo.war /usr/local/tomcat/webapps/struts-k8s-demo.war
+COPY target/test_app.war /usr/local/tomcat/webapps/test_app.war
 
 # Expose internal listening port configurations
 EXPOSE 8080
