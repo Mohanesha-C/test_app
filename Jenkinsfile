@@ -4,7 +4,7 @@ pipeline {
 
     environment {
 
-        IMAGE_NAME = "yourdockerhub/demo-app"
+        IMAGE_NAME = "cmohanesha/test_app"
         IMAGE_TAG  = "${BUILD_NUMBER}"
 
     }
