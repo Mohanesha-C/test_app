@@ -53,6 +53,11 @@ pipeline {
                 ]) {
 
                     bat """
+                            echo "User: [$DOCKER_USER]"
+                            echo "Password length: $(printf %s "$DOCKER_PASS" | wc -c)"
+                        """
+
+                    bat """
                     echo \$DOCKER_PASS | docker login \
                     -u \$DOCKER_USER \
                     --password-stdin
@@ -77,10 +82,10 @@ pipeline {
                     bat """
                     export KUBECONFIG=\$KUBECONFIG_FILE
 
-                    kubectl set image deployment/demo-app \
-                    demo-app=${IMAGE_NAME}:${IMAGE_TAG}
+                    kubectl set image deployment/test_app \
+                    test_app=${IMAGE_NAME}:${IMAGE_TAG}
 
-                    kubectl rollout status deployment/demo-app
+                    kubectl rollout status deployment/test_app
                     """
                 }
             }
