@@ -54,7 +54,7 @@ pipeline {
 
                     bat """
                             echo "User: [$DOCKER_USER]"
-                            echo "Password length: $(printf %s "$DOCKER_PASS" | wc -c)"
+                            echo "Password length: \$(printf %s "$DOCKER_PASS" | wc -c)"
                         """
 
                     bat """
