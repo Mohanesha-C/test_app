@@ -66,9 +66,9 @@ pipeline {
                     bat '''
                     set KUBECONFIG=%KUBECONFIG_FILE%
 
-                    kubectl set image deployment/test-app test-app=%IMAGE_NAME%:%IMAGE_TAG%
+                    kubectl set image deployment/struts-deployment struts-container=%IMAGE_NAME%:%IMAGE_TAG%
 
-                    kubectl rollout status deployment/test_app
+                    kubectl rollout status deployment/struts-deployment
                     '''
                 }
             }
