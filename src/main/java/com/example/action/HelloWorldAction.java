@@ -8,7 +8,7 @@ public class HelloWorldAction extends ActionSupport {
     @Override
     public String execute() {
         customMessage = "Hello from Apache Struts running inside Kubernetes! Updated by Sonata Team!!!";
-        customMessage = customMessage + " Test Again!!";
+        customMessage = customMessage + " Sonata Test Again SCM Automate!!";
         return SUCCESS;
     }
 
